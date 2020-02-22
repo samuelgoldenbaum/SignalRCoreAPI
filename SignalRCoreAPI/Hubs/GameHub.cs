@@ -68,7 +68,7 @@ namespace SignalRCoreAPI.Hubs {
             await Clients.All.SendAsync ("ReceiveMessage", message);
         }
 
-        public async Task SendDictionary (Dictionary<string, object> data, DateTime when) {
+        public async Task SendDictionary (Dictionary<string, object> data, DateTimeOffset when) {
             await Clients.Client (Context.ConnectionId).SendAsync ("ReceiveDictionary", data, when);
         }
 
